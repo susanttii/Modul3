@@ -23,12 +23,9 @@ class LogoutTest extends DuskTestCase
                     ->type(field: 'input[name="password"]', value: '12345678')
                     ->press(button: 'LOG IN')
                     ->assertPathIs('/dashboard')
-                    ->pause(2000)
                     ->resize(375, 812)
                     ->click('div.sm\:hidden button') 
-                    ->pause(1000)
                     ->clickLink('Log Out')
-                    ->pause(1000)
                     ->assertPathIs('/');
         });
     }
