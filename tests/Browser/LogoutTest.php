@@ -23,14 +23,12 @@ class LogoutTest extends DuskTestCase
                     ->type(field: 'input[name="password"]', value: '12345678')
                     ->press(button: 'LOG IN')
                     ->assertPathIs('/dashboard')
-                    ->pause(2000) // Ensure dashboard is fully loaded
-                    // Use the mobile navigation for simplicity
+                    ->pause(2000)
                     ->resize(375, 812)
-                    ->click('div.sm\:hidden button') // Click hamburger menu button
-                    ->pause(1000) // Wait for mobile menu to appear
-                    // Find the logout link in the responsive menu
+                    ->click('div.sm\:hidden button') 
+                    ->pause(1000)
                     ->clickLink('Log Out')
-                    ->pause(1000) // Wait for logout to complete
+                    ->pause(1000)
                     ->assertPathIs('/');
         });
     }
